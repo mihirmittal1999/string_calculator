@@ -56,9 +56,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Enter numbers',
-                hintText: 'Example: //;\n1;2',
+                hintText: 'e.g. 1,2,3 or 4]5//, 7;8',
               ),
-              maxLines: 2,
             ),
             const SizedBox(height: 16),
             ElevatedButton(
