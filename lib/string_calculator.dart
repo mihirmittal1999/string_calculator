@@ -2,18 +2,8 @@ class StringCalculator {
   int add(String numbers) {
     if (numbers.isEmpty) return 0;
 
-    String delimiter = ',';
-    String numbersPart = numbers;
-
-    // Custom delimiter support
-    if (numbers.startsWith('//')) {
-      int delimiterEndIndex = numbers.indexOf('\n');
-      delimiter = numbers.substring(2, delimiterEndIndex);
-      numbersPart = numbers.substring(delimiterEndIndex + 1);
-    }
-
-    // Split with comma, newline, or custom delimiter
-    final splitNumbers = numbersPart.split(RegExp('[\n$delimiter,]'));
+    // Split with any non-digit character
+    final splitNumbers = numbers.split(RegExp(r'[^\d-]'));
 
     final parsedNumbers = <int>[];
     for (var num in splitNumbers) {
